@@ -90,7 +90,7 @@ function CaseStudyPage() {
             <Eyebrow withTick>Key Features</Eyebrow>
             <h2 className="mt-4 font-display text-[28px] leading-tight sm:text-[32px]">What the platform does.</h2>
             <ul className="mt-6 space-y-3">
-              {study.keyFeatures.map((f) => (
+              {study.keyFeatures.map((f: string) => (
                 <li key={f} className="flex gap-3 text-[16px] leading-relaxed text-ink-soft">
                   <span aria-hidden className="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span>{f}</span>
@@ -102,7 +102,7 @@ function CaseStudyPage() {
             <Eyebrow withTick>Challenges</Eyebrow>
             <h2 className="mt-4 font-display text-[28px] leading-tight sm:text-[32px]">What was hard.</h2>
             <ul className="mt-6 space-y-3">
-              {study.challenges.map((c) => (
+              {study.challenges.map((c: string) => (
                 <li key={c} className="flex gap-3 text-[16px] leading-relaxed text-ink-soft">
                   <span aria-hidden className="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span>{c}</span>
@@ -126,7 +126,7 @@ function CaseStudyPage() {
             <div className="mt-10">
               <div className="eyebrow mb-4">Lessons Learned</div>
               <ul className="flex flex-wrap gap-2">
-                {study.lessons.map((l) => (
+                {study.lessons.map((l: string) => (
                   <Pill as="li" key={l}>{l}</Pill>
                 ))}
               </ul>
@@ -140,12 +140,12 @@ function CaseStudyPage() {
         <Eyebrow withTick>Technologies Used</Eyebrow>
         <h2 className="mt-4 font-display text-[28px] leading-tight sm:text-[32px]">The stack.</h2>
         <dl className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {study.technologies.map((group) => (
+          {study.technologies.map((group: { category: string; items: string[] }) => (
             <div key={group.category}>
               <dt className="eyebrow mb-3">{group.category}</dt>
               <dd>
                 <ul className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
+                  {group.items.map((item: string) => (
                     <Pill as="li" key={item}>{item}</Pill>
                   ))}
                 </ul>
