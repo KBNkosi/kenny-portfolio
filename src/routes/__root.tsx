@@ -84,14 +84,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Kenny Nkosi builds software platforms that connect people, services, opportunities, and business processes — from AI-powered booking to community marketplaces.",
+          "Kenny Nkosi builds business platforms, digital marketplaces, and workflow solutions — from AI-assisted appointment booking to community-driven service discovery.",
       },
       { name: "author", content: "Kenny Nkosi" },
       { property: "og:title", content: "Kenny Nkosi — Software Developer" },
       {
         property: "og:description",
         content:
-          "Business platforms, digital marketplaces, and workflow solutions — shipped in collaboration with founders.",
+          "Business platforms, digital marketplaces, and workflow solutions across recommendation systems, service discovery, and community platforms.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

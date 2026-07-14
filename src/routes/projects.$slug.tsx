@@ -60,6 +60,38 @@ function CaseStudyPage() {
           <p className="mt-6 max-w-[65ch] text-[18px] leading-relaxed text-ink-soft sm:text-[20px]">
             {study.overview}
           </p>
+          <dl className="mt-8 grid gap-x-8 gap-y-3 text-[14px] sm:grid-cols-2 lg:grid-cols-4">
+            <MetaItem label="Status" value={study.status} />
+            <MetaItem label="Role" value={study.role} />
+            <MetaItem label="Timeline" value={study.timeline} />
+            <MetaItem label="Team" value={study.teamSize} />
+          </dl>
+          <div className="mt-6 flex flex-wrap items-center gap-5 text-[13px]">
+            {study.github ? (
+              <a
+                href={study.github}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="eyebrow text-primary underline-offset-4 hover:text-primary-dark hover:underline"
+              >
+                Source Code →
+              </a>
+            ) : (
+              <span className="eyebrow text-ink-faint">Source code not public</span>
+            )}
+            {study.liveDemo ? (
+              <a
+                href={study.liveDemo}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="eyebrow text-primary underline-offset-4 hover:text-primary-dark hover:underline"
+              >
+                Live Demo →
+              </a>
+            ) : (
+              <span className="eyebrow text-ink-faint">Live demo not currently available</span>
+            )}
+          </div>
         </div>
         <div className="mt-16 rounded-xl border border-border bg-surface p-8 sm:p-12">
           <FlowLine
@@ -99,7 +131,7 @@ function CaseStudyPage() {
             </ul>
           </div>
           <div>
-            <Eyebrow withTick>Challenges</Eyebrow>
+            <Eyebrow withTick>Challenges & Decisions</Eyebrow>
             <h2 className="mt-4 font-display text-[28px] leading-tight sm:text-[32px]">What was hard.</h2>
             <ul className="mt-6 space-y-3">
               {study.challenges.map((c: string) => (
@@ -124,7 +156,7 @@ function CaseStudyPage() {
               </p>
             </div>
             <div className="mt-10">
-              <div className="eyebrow mb-4">Lessons Learned</div>
+              <div className="eyebrow mb-4">Key Takeaways</div>
               <ul className="flex flex-wrap gap-2">
                 {study.lessons.map((l: string) => (
                   <Pill as="li" key={l}>{l}</Pill>
@@ -194,6 +226,15 @@ function Block({ eyebrow, title, body }: { eyebrow: string; title: string; body:
       <Eyebrow withTick>{eyebrow}</Eyebrow>
       <h2 className="mt-4 font-display text-[28px] leading-tight sm:text-[32px]">{title}</h2>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft sm:text-[18px]">{body}</p>
+    </div>
+  );
+}
+
+function MetaItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="eyebrow">{label}</dt>
+      <dd className="mt-1 text-[15px] text-ink">{value}</dd>
     </div>
   );
 }
