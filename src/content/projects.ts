@@ -2,146 +2,171 @@ export type CaseStudy = {
   slug: "ai-booking-platform" | "marketplace-mvp" | "neighbour-trust";
   eyebrow: string;
   title: string;
+  status: string;
+  role: string;
+  timeline: string;
+  teamSize: string;
+  targetUsers: string;
   overview: string;
   problem: string;
   solution: string;
-  role: string;
   keyFeatures: string[];
   challenges: string[];
   outcome: string;
   lessons: string[];
   technologies: { category: string; items: string[] }[];
   flowline: { problem: string; solution: string; outcome: string };
+  github: string | null;
+  liveDemo: string | null;
 };
 
 export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
-  "neighbour-trust": {
-    slug: "neighbour-trust",
-    eyebrow: "Case Study · Community Services Platform",
-    title: "Neighbour Trust",
-    overview:
-      "A hyperlocal marketplace connecting neighbourhoods to trusted service providers — plumbers, tutors, cleaners, handymen — through verified profiles, structured booking, and community reviews.",
-    problem:
-      "Finding a reliable local service provider still depends on word-of-mouth. Providers, in turn, struggle to reach new customers outside their immediate network. The result is a fragmented, low-trust market where both sides waste time.",
-    solution:
-      "A location-first marketplace with verified providers, structured service categories, in-platform booking, and a review system anchored to real bookings. The platform prioritises trust signals over volume of listings.",
-    role: "Founding Developer — owning product architecture, full-stack implementation, and the pilot rollout in collaboration with the founder.",
-    keyFeatures: [
-      "Provider onboarding with verification checkpoints",
-      "Location-based service discovery",
-      "In-platform booking and messaging",
-      "Review system tied to completed bookings",
-      "Admin tooling for pilot moderation",
-    ],
-    challenges: [
-      "Designing trust mechanics that work at neighbourhood scale, not city scale.",
-      "Balancing provider friction (verification) against onboarding speed.",
-      "Building booking flows resilient to real-world scheduling chaos.",
-    ],
-    outcome:
-      "A working platform enabling early neighbourhood pilots, with providers actively onboarding and initial bookings running end-to-end.",
-    lessons: [
-      "Trust is a product feature, not a policy page.",
-      "Local marketplaces need dense participation before wide reach.",
-      "Founder collaboration is fastest when the developer owns the whole stack.",
-    ],
-    technologies: [
-      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS"] },
-      { category: "Backend", items: ["Node.js", "Server Functions"] },
-      { category: "Data", items: ["PostgreSQL", "Supabase", "RLS"] },
-    ],
-    flowline: {
-      problem: "Word-of-mouth service discovery",
-      solution: "Verified local marketplace",
-      outcome: "Pilot-ready platform running bookings",
-    },
-  },
   "ai-booking-platform": {
     slug: "ai-booking-platform",
-    eyebrow: "Case Study · AI-Powered SaaS",
-    title: "AI Booking Platform",
+    eyebrow: "Case Study · Workflow Automation Platform",
+    title: "AI-Assisted Appointment Booking Platform",
+    status: "In Development",
+    role: "Backend Developer & System Designer",
+    timeline: "2–4 months",
+    teamSize: "Solo",
+    targetUsers: "Healthcare clinics and appointment-based businesses",
     overview:
-      "A conversational booking system that lets small businesses capture and confirm appointments through an AI-driven flow — replacing long forms and missed calls with a single, guided interaction.",
+      "An AI-assisted booking platform that automates appointment scheduling through conversational interactions, handling patient resolution, availability calculation, conflict detection, and appointment creation.",
     problem:
-      "Small service businesses lose bookings to friction. Traditional forms are long, phone calls get missed, and the follow-up dance costs time on both sides. Owners wanted a way to convert interest into confirmed appointments without adding staff.",
+      "Many clinics rely on manual scheduling processes that require staff to answer calls, verify patient information, check availability, and create appointments by hand.",
     solution:
-      "A conversational booking flow powered by an AI layer that understands intent, checks availability against the business's schedule, and confirms in-line. Designed as a founder-led MVP to validate the core interaction before scaling features.",
-    role: "Solo Developer, working directly with the founder on product scoping, prototype delivery, and investor-facing demos.",
+      "A backend that automates appointment scheduling through conversational flows, resolves patients, matches doctors, calculates availability dynamically, detects conflicts, and creates appointments idempotently.",
     keyFeatures: [
-      "AI-powered intent capture and slot suggestion",
-      "Real-time availability checks",
-      "In-conversation confirmation",
-      "Business owner dashboard for review",
-      "Demo mode for investor conversations",
+      "Appointment scheduling workflows",
+      "Patient identification and registration",
+      "Doctor lookup and matching",
+      "Dynamic availability calculation",
+      "Conflict detection",
+      "Alternative appointment suggestions",
+      "Idempotent request handling",
     ],
     challenges: [
-      "Keeping the AI focused on booking intent without over-scoping into general chat.",
-      "Handling ambiguous availability requests gracefully.",
-      "Delivering a demo-ready prototype on a tight founder timeline.",
+      "Designing dynamic availability calculation without relying on pre-generated booking slots.",
+      "Preventing overlapping appointments while supporting concurrent booking requests.",
+      "Separating booking intent from confirmed appointments to support reliable retry handling.",
     ],
     outcome:
-      "Delivered a working prototype that enabled concept validation, live demos, and early investor engagement for the founder.",
+      "Demonstrates workflow automation, scheduling systems, and scalable appointment management.",
     lessons: [
-      "AI works best when constrained to a specific job.",
-      "For founder MVPs, demo-quality is a product requirement.",
-      "Fast iteration with a founder beats a polished plan built in isolation.",
+      "Critical business rules should be enforced at the database level, not only in application code.",
+      "Workflow design often becomes more complex than API implementation.",
+      "Reliability and consistency are core requirements for automation systems.",
     ],
     technologies: [
-      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS"] },
-      { category: "Backend", items: ["Node.js", "REST APIs"] },
-      { category: "AI", items: ["LLM Integration", "Prompt Design"] },
+      { category: "Backend", items: ["Python", "FastAPI"] },
+      { category: "Data", items: ["PostgreSQL", "SQLAlchemy", "Alembic"] },
+      { category: "Voice / AI", items: ["Vapi (planned)"] },
     ],
     flowline: {
-      problem: "Booking friction losing revenue",
-      solution: "AI-driven conversational booking",
-      outcome: "Prototype validated with investors",
+      problem: "Manual clinic scheduling loses time",
+      solution: "AI-assisted, conflict-aware booking",
+      outcome: "Scalable appointment workflow",
     },
+    github: null,
+    liveDemo: null,
+  },
+  "neighbour-trust": {
+    slug: "neighbour-trust",
+    eyebrow: "Case Study · Community Marketplace / Service Discovery",
+    title: "NeighborTrust",
+    status: "Frontend Prototype / Concept Validation",
+    role: "Product Designer & Frontend Developer",
+    timeline: "4–6 weeks",
+    teamSize: "Solo",
+    targetUsers: "Residents seeking trusted local service providers",
+    overview:
+      "A recommendation-driven platform that helps residents discover trusted local professionals through community trust, referrals, and AI-assisted search.",
+    problem:
+      "People struggle to identify reliable service providers due to fragmented recommendations, anonymous reviews, and limited trust signals.",
+    solution:
+      "A trust-first discovery experience combining community recommendations, structured provider profiles, ratings, and AI-assisted provider search.",
+    keyFeatures: [
+      "Provider discovery",
+      "Community recommendations",
+      "Provider profiles",
+      "Ratings and trust indicators",
+      "AI-assisted provider search",
+      "Recommendation submission",
+    ],
+    challenges: [
+      "Designing trust mechanisms that go beyond simple ratings and reviews.",
+      "Creating intuitive service discovery flows for local providers.",
+      "Structuring provider information to support search, recommendations, and AI-assisted discovery.",
+    ],
+    outcome:
+      "Validates a trust-first approach to local service discovery.",
+    lessons: [
+      "Trust is a product design problem as much as a technical problem.",
+      "Effective discovery experiences reduce decision-making friction.",
+      "Users value confidence and credibility more than large amounts of information.",
+    ],
+    technologies: [
+      { category: "Frontend", items: ["React", "Vite"] },
+      { category: "Styling", items: ["Tailwind CSS"] },
+      { category: "Routing", items: ["React Router"] },
+    ],
+    flowline: {
+      problem: "Fragmented, low-trust local recommendations",
+      solution: "Community-driven trust and discovery",
+      outcome: "Validated trust-first service discovery",
+    },
+    github: null,
+    liveDemo: null,
   },
   "marketplace-mvp": {
     slug: "marketplace-mvp",
-    eyebrow: "Case Study · Digital Marketplace",
-    title: "Marketplace MVP",
+    eyebrow: "Case Study · Startup MVP",
+    title: "Founder-Led Marketplace MVP",
+    status: "Delivered Prototype",
+    role: "Frontend Developer, QA & Product Collaboration",
+    timeline: "2 months",
+    teamSize: "Team of 4",
+    targetUsers: "Startup founder validating a marketplace concept",
     overview:
-      "A lean two-sided marketplace MVP built to test demand, onboarding flows, and transaction mechanics before committing to a full platform investment.",
+      "A functional marketplace prototype built in collaboration with a founder and a small team to support concept validation within a fixed two-month timeline.",
     problem:
-      "The founder had a marketplace hypothesis but no way to validate it without a real product in front of real users. Building a full platform first would have burned months before the first learning.",
+      "The founder required a working marketplace prototype to support concept validation and early business discussions.",
     solution:
-      "A focused MVP covering listings, search, messaging, and lightweight transactions — architected so the pieces that survived validation could be extended, not thrown away.",
-    role: "Full-Stack Developer — scoping, implementation, and iteration in partnership with the founder.",
+      "Collaborated directly with the founder and dev team to build a functional marketplace MVP on FlutterFlow and Supabase, covering core listings, user interactions, and prototype validation features.",
     keyFeatures: [
-      "Two-sided onboarding (sellers and buyers)",
-      "Listing creation and browsing",
-      "Search and category filtering",
-      "In-platform messaging",
-      "Basic transaction and status tracking",
+      "Marketplace listings",
+      "User interactions",
+      "Core marketplace workflows",
+      "Prototype validation features",
     ],
     challenges: [
-      "Cutting scope aggressively without losing the mechanics that make a marketplace work.",
-      "Designing data models that could survive post-MVP evolution.",
-      "Keeping the MVP demo-ready throughout iteration.",
+      "Delivering a functional product within a fixed two-month timeline.",
+      "Working with evolving requirements as the business concept developed.",
+      "Learning unfamiliar tools while actively contributing to delivery.",
     ],
     outcome:
-      "Enabled real user testing, informed the next round of product decisions, and gave the founder concrete evidence to move forward.",
+      "Delivered a functional MVP for startup validation.",
     lessons: [
-      "The right MVP is the smallest slice that still teaches you something.",
-      "Marketplace mechanics don't scale down as easily as feature lists do.",
-      "Architect for the next version, not the current one.",
+      "Shipping a usable product is often more important than technical perfection.",
+      "Building for validation requires different priorities than building for scale.",
+      "Software development decisions should align with business goals.",
     ],
     technologies: [
-      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS"] },
-      { category: "Backend", items: ["Node.js", "REST APIs"] },
-      { category: "Data", items: ["PostgreSQL"] },
+      { category: "Rapid Delivery", items: ["FlutterFlow"] },
+      { category: "Backend & Data", items: ["Supabase"] },
     ],
     flowline: {
-      problem: "Unvalidated marketplace hypothesis",
-      solution: "Focused two-sided MVP",
-      outcome: "Real learnings driving next steps",
+      problem: "Founder needed a validation-ready product",
+      solution: "Team-shipped MVP on FlutterFlow + Supabase",
+      outcome: "Functional MVP for startup validation",
     },
+    github: null,
+    liveDemo: null,
   },
 };
 
 export const caseStudyOrder: CaseStudy["slug"][] = [
-  "neighbour-trust",
   "ai-booking-platform",
+  "neighbour-trust",
   "marketplace-mvp",
 ];
