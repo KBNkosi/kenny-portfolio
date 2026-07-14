@@ -1,109 +1,75 @@
+## Goal
 
-# Kenny Nkosi — Portfolio Build Plan
+Align all portfolio content with the Content Specification + Master Project Fact Sheet. Keep the existing visual design, layout, tokens, animations, and components. This is a content and structure update — no redesign.
 
-Hybrid architecture: one long scrolling homepage plus three dedicated case-study routes. Cool off-white palette, Fraunces + Inter + IBM Plex Mono, one disciplined blue (#296CD8). Signature device: a horizontal Problem → Solution → Outcome flow-line reused at three scales.
+## Scope of changes
 
-## Routes
+### 1. `src/content/site.ts` — full rewrite of data (not shape)
 
-```text
-/                              scrolling homepage (all sections)
-/projects/ai-booking-platform  case study
-/projects/marketplace-mvp      case study
-/projects/neighbour-trust      case study
-```
+- **Personal info**: location `Gauteng, South Africa`; email `nkosikenny9@gmail.com`; GitHub `https://github.com/KBNkosi`; LinkedIn `https://www.linkedin.com/in/kennynkosi`.
+- **Hero**: keep current headline/lede structure; ensure copy matches the spec's positioning (workflow automation, service discovery, recommendation systems, marketplaces, community platforms).
+- **Credibility stats**: rewrite to reflect what the fact sheet actually supports (e.g. "6 shipped projects", "3 featured platforms", "5 product domains", "Founder + team collaborations"). No fabricated metrics.
+- **Core themes**: replace with the seven cross-project themes from the fact sheet (Workflow Automation, Recommendation Systems, Service Discovery, Marketplace Platforms, Community Platforms, Decision Support Systems, User-Centered Product Design).
+- **`featuredProjects`** — rewrite the three entries from the fact sheet:
+  - AI-Assisted Appointment Booking Platform (In Development, Backend Developer & System Designer, Workflow Automation Platform, Python/FastAPI/PostgreSQL/SQLAlchemy/Alembic/Vapi).
+  - NeighborTrust (Frontend Prototype / Concept Validation, Product Designer & Frontend Developer, React/Vite/Tailwind/React Router). Rename all "Neighbour Trust" → "NeighborTrust" (slug stays `neighbour-trust` to avoid link breakage).
+  - Founder-Led Marketplace MVP (Delivered Prototype, Frontend Developer / QA / Product Collaboration, FlutterFlow + Supabase, team of 4).
+  - Extend each with `github` and `liveDemo` fields (nullable → render "Live demo not currently available.").
+- **`supportingProjects`** (new, replaces the loose `additionalProjects`) — three cards, each with summary, problem, solution, technologies, `github`, `liveDemo`:
+  - Career Guidance Platform (React, Tailwind, Flask, SQLite, Scikit-learn).
+  - E-Commerce Storefront (React, Vite, Tailwind, React Router, Axios).
+  - CrowdRail (PHP, MySQL, Bootstrap, Apache).
+- **Principles**: keep as-is (spec-neutral positioning).
+- **`experience` → `journey`**: replace with one-line milestones for the Career & Project Journey:
+  1. BSc studies — foundations in software and systems.
+  2. Career Guidance Capstone — recommendation systems & decision support.
+  3. Technical Support (ALX) — real-world troubleshooting and user support.
+  4. CrowdRail & E-Commerce Storefront — independent product building.
+  5. Founder-Led Marketplace MVP — startup delivery in a team of 4.
+  6. NeighborTrust — service discovery & community trust.
+  7. AI-Assisted Appointment Booking Platform — workflow automation (current focus).
+- **Testimonials**: keep the three quote slots; replace attributions with visible placeholders (`[Testimonial Name]`, `[Role/Company]`) since the fact sheet doesn't supply verified quotes. No invented names.
+- **Toolkit**: rewrite to only technologies that appear in the fact sheet (Python/FastAPI/SQLAlchemy/Alembic/PostgreSQL/SQLite/MySQL/Scikit-learn/Flask/React/Vite/Tailwind/React Router/Axios/FlutterFlow/Supabase/PHP/Bootstrap/Apache/Vapi).
+- **About**: rewrite to Gauteng + spec positioning (workflow automation, recommendation systems, marketplaces, community platforms, service discovery). No unsupported claims about investors, mentors, or clients.
+- **Nav**: rename "Journey" label if present; add `Journey` entry if missing.
 
-Top nav: Home · Projects (scrolls to Featured Projects on `/`) · GitHub · LinkedIn · Contact. Each route gets its own `head()` — distinct title, description, og:title/description. Case studies also set og:image once real screenshots exist (omitted for now).
+### 2. `src/content/projects.ts` — case studies rewritten from fact sheet + case-study additions
 
-## Homepage section order
+Only the three featured projects get case studies (per user rules). For each:
+- Overview, Problem, Solution, Role, Key Features, Tech Stack (grouped), Challenges & Decisions, Key Takeaways, Business Outcome, Flowline problem/solution/outcome — sourced strictly from the fact sheet.
+- Add `github` and `liveDemo` fields.
+- Rename display title "Neighbour Trust" → "NeighborTrust" (slug unchanged).
 
-Hero → Credibility Snapshot → Core Themes → Featured Projects → How I Work → Professional Experience → Testimonials → Technical Toolkit → About → Contact.
+Supporting projects do NOT get case study routes.
 
-(Note: this differs from the design doc's order — Case Studies live on their own routes per the site-structure brief, and How I Work moves up before Experience per your latest spec.)
+### 3. Components — small additions, no redesign
 
-## Design system
+- **`FeaturedProjectCard`**: add a footer row with two link buttons — "Source Code" (GitHub) and "Live Demo" or the fallback text "Live demo not currently available." Existing card layout and hover behavior stay identical.
+- **`SupportingProjectCard`** (new, lightweight): compact card — title, one-line summary, Problem line, Solution line, tech chips, Source Code + Live Demo links. Uses existing `Pill`, `Eyebrow`, border/token styles. Visually lighter (smaller padding, no flowline, no case-study link). No new tokens.
+- **`JourneyList`** (new, or in-place in `index.tsx`): renders one-line milestones as a vertical list of dot + year/label + short line — reuses existing typography and border tokens.
+- **Case study page (`projects.$slug.tsx`)**: add a "Challenges & Decisions" and "Key Takeaways" block (already partially there — align field names with new content shape), and add Source Code / Live Demo buttons in the header. No layout change beyond adding these blocks in the existing rhythm.
 
-**Color tokens** added to `src/styles.css` via `@theme inline` + `:root`:
-- `--bg #FAFAFC`, `--bg-alt #F3F5FA`, `--surface #FFFFFF`
-- `--ink #12151C`, `--ink-soft #4B5262`, `--ink-faint #8890A0`
-- `--border #E4E8F0`
-- `--primary #296CD8`, `--primary-dark #1E52A8`, `--primary-tint #EAF1FC`
+### 4. Homepage (`src/routes/index.tsx`)
 
-Shadcn's existing tokens get remapped to these so `bg-background`, `text-foreground`, `border-border`, `bg-primary` all resolve to the new palette. No dark mode (portfolio is light-only per brief).
+- Update Featured Projects section — unchanged layout.
+- Add a **Supporting Projects** section immediately after Featured Projects, using a 3-up compact card grid. Uses existing `SectionHeading` + section padding.
+- Rename the timeline section to **"Career & Project Journey"** and swap in the milestone list.
+- Update any copy blocks that reference stats/domains to match the new content.
 
-**Typography** via `<link>` tags in `__root.tsx` head (Google Fonts):
-- Fraunces (variable, opsz + wght) — display/headings, one italic word per headline max
-- Inter — body/UI
-- IBM Plex Mono — eyebrows, tags, metadata (uppercase, 0.08em tracking)
+### 5. Global consistency pass
 
-Type scale exactly as specified (H1 64→38px, H2 40→28px, H3 24→20px, body 17→16px, eyebrow 12px mono).
+- Remove every unsupported claim: no "investor engagement" (except where the fact sheet allows — it doesn't, so remove), no "mentor" testimonials attributed to real people, no invented client names, no unverified metrics.
+- Remove any "built to learn / practice project / demonstrates my React skills" phrasing.
+- Standardize project name spelling: **NeighborTrust** (one word, US spelling per fact sheet).
+- Nav, footer, root metadata, and hero all reflect Gauteng + real contact details.
 
-**Spacing & layout**: 8px base unit; container max-width 1200px; prose max-width 720px; section padding 128/96/64px desktop/tablet/mobile; alternating `--bg` / `--bg-alt` bands; cards 1px border + 12px radius + 32–40px padding, shadow only on hover.
+## Out of scope
 
-## Signature: the flow-line component
+- Visual redesign, token changes, font changes, animation changes.
+- New routes beyond what already exists.
+- Case studies for supporting projects.
+- Any backend / auth / data-layer work.
 
-One reusable `<FlowLine problem solution outcome variant="hero|featured|case" />` component drives the whole motif:
-- **hero**: miniature, decorative, three unlabeled nodes; SVG line draws left-to-right on mount (~600ms), nodes scale/fade in sequence
-- **featured**: horizontal, labeled — three short statements sit under Problem / Solution / Outcome nodes; on card hover the connecting line fills left-to-right in `--primary`
-- **case**: larger, full-width at the top of each case-study route
+## Verification
 
-All animation respects `prefers-reduced-motion` (fallback: fully drawn, no reveal). Scroll reveals use IntersectionObserver, 12px fade-up, 60–80ms stagger for grouped items.
-
-## Homepage section notes
-
-- **Hero**: full-viewport left-aligned. Eyebrow "SOFTWARE DEVELOPER", Fraunces H1 with one italic word, Inter lede ≤60ch, primary "View Projects" + ghost "Get In Touch". Miniature flow-line renders as the page-load moment.
-- **Credibility Snapshot**: `--bg-alt` band, 4 stats separated by hairline vertical dividers (no boxes), Fraunces numerals + Inter labels. Highlight bullets below as a compact 2-column list.
-- **Core Themes**: single centered row of `--primary-tint` pills, ~15vh section.
-- **Featured Projects**: three stacked full-width cards (Neighbour Trust, AI Booking, Marketplace MVP). Each shows mono eyebrows (type + status), Fraunces title, one-line summary, flow-line, focus tags, role + timeline top-right. Title links to the case-study route.
-- **How I Work**: 2×3 grid of principle cards, no numbering.
-- **Professional Experience**: single vertical hairline with `--primary` dot markers, Fraunces role titles, mono durations, responsibilities grouped in short 2-column lines.
-- **Testimonials**: 3-card row (stack on mobile), Inter 19px quotes, mono attribution below thin rule, no photos (initials-in-circle if needed).
-- **Technical Toolkit**: pill clusters grouped by category label (Frontend, Backend, Databases, Tools, Product & Collaboration).
-- **About**: 720px reading column, prose only.
-- **Contact**: `--primary-tint` band, large Fraunces headline "Let's Build Something Useful", primary CTA (mailto), understated text links to GitHub/LinkedIn.
-
-Placeholders `[Your Email]`, `[Your GitHub URL]`, `[Your LinkedIn URL]`, `[Founder/Mentor/Teammate Name]` render as-is so you can find & replace later.
-
-## Case-study route template
-
-Each `/projects/*` route follows the same shape: mono eyebrow + Fraunces H1, large flow-line, then Project Overview → Problem → Solution → My Role → Key Features → Challenges → Outcome/Impact (`--primary-tint` callout) → Lessons Learned (tag list) → Technologies Used (grouped pills). "Back to all projects" link at top, next/previous case-study links at bottom.
-
-## Components to build
-
-```text
-src/components/site/Nav.tsx
-src/components/site/Footer.tsx
-src/components/site/FlowLine.tsx        // signature motif, 3 variants
-src/components/site/SectionHeading.tsx  // eyebrow + H2 with primary tick
-src/components/site/Eyebrow.tsx
-src/components/site/Pill.tsx
-src/components/site/StatStrip.tsx
-src/components/site/FeaturedProjectCard.tsx
-src/components/site/PrincipleCard.tsx
-src/components/site/TimelineItem.tsx
-src/components/site/TestimonialCard.tsx
-src/components/site/ToolkitCluster.tsx
-src/components/site/Reveal.tsx          // IntersectionObserver fade-up wrapper
-src/components/site/CaseStudyLayout.tsx // shared shell for /projects/*
-
-src/content/site.ts                     // all copy from the spec, typed
-src/content/projects.ts                 // case-study data keyed by slug
-
-src/routes/index.tsx                    // rewritten (removes placeholder)
-src/routes/projects.$slug.tsx           // dynamic case-study route
-```
-
-`__root.tsx` gets font `<link>` tags, real site metadata, and wraps `<Outlet />` in the shared Nav + Footer.
-
-## Technical notes
-
-- Fonts loaded via `<link>` in `__root.tsx` head (per Tailwind v4 rules — never `@import` remote URLs in `styles.css`).
-- Font-family tokens registered under `@theme` so `font-display`, `font-sans`, `font-mono` utilities work.
-- `FlowLine` uses inline SVG with `stroke-dasharray` / `stroke-dashoffset` for the draw-in; nodes are `<circle>` elements with staggered CSS keyframes. All animation gated on a `useReducedMotion()` hook.
-- `projects.$slug.tsx` uses `notFound()` for unknown slugs; `notFoundComponent` shows a friendly "case study not found" with a link back to `/`.
-- No backend needed — everything is static content. No Lovable Cloud enablement.
-
-## Out of scope for this build
-
-- Real project screenshots (case-study heroes stay typographic until you supply images)
-- Actual email / GitHub / LinkedIn / testimonial names
-- Blog, resume PDF download, or contact form (contact is a mailto)
+After edits: build passes, `/` renders all sections in order (Hero → Stats → Core Themes → Featured Projects → Supporting Projects → Principles → Career & Project Journey → Toolkit → Testimonials → About → Contact), all three case study routes render with GitHub / Live Demo buttons and the new Challenges + Takeaways blocks, and a grep for placeholder strings (`[Your Email]`, `Mpumalanga`, `Neighbour Trust`) returns nothing.
