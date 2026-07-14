@@ -3,11 +3,12 @@ import {
   about,
   coreThemes,
   credibility,
-  experience,
   featuredProjects,
   hero,
+  journey,
   principles,
   site,
+  supportingProjects,
   testimonials,
   toolkit,
 } from "@/content/site";
@@ -18,6 +19,7 @@ import { Pill } from "@/components/site/Pill";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { StatStrip } from "@/components/site/StatStrip";
+import { SupportingProjectCard } from "@/components/site/SupportingProjectCard";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -109,99 +111,113 @@ function Home() {
         </div>
       </section>
 
-      {/* HOW I WORK */}
+      {/* SUPPORTING PROJECTS */}
       <section className={`${container} ${section}`}>
         <SectionHeading
-          eyebrow="How I Work"
-          title="Six principles, applied on every build."
+          eyebrow="Supporting Projects"
+          title="Additional work across product domains."
+          lede="Earlier and adjacent projects that shaped how I approach recommendation systems, e-commerce flows, and community platforms."
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {principles.map((p, i) => (
-            <Reveal key={p.title} delayMs={i * 60}>
-              <div className="h-full rounded-xl border border-border bg-surface p-8 transition-colors hover:border-primary/40">
-                <h3 className="font-display text-[20px] leading-snug text-ink">{p.title}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{p.body}</p>
-              </div>
+          {supportingProjects.map((p, i) => (
+            <Reveal key={p.title} delayMs={i * 80}>
+              <SupportingProjectCard project={p} />
             </Reveal>
           ))}
         </div>
       </section>
 
-      {/* EXPERIENCE */}
+      {/* HOW I WORK */}
       <section className={`bg-bg-alt ${section}`}>
         <div className={container}>
-          <SectionHeading eyebrow="Professional Experience" title="A short, honest timeline." />
-          <ol className="mt-12 relative border-l border-border pl-8">
-            {experience.map((role) => (
-              <li key={role.role} className="relative pb-12 last:pb-0">
-                <span
-                  aria-hidden
-                  className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-bg-alt bg-primary"
-                />
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="font-display text-[22px] leading-tight text-ink">{role.role}</h3>
-                  <span className="eyebrow">{role.duration}</span>
+          <SectionHeading
+            eyebrow="How I Work"
+            title="Six principles, applied on every build."
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {principles.map((p, i) => (
+              <Reveal key={p.title} delayMs={i * 60}>
+                <div className="h-full rounded-xl border border-border bg-surface p-8 transition-colors hover:border-primary/40">
+                  <h3 className="font-display text-[20px] leading-snug text-ink">{p.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{p.body}</p>
                 </div>
-                <ul className="mt-4 grid gap-x-8 gap-y-2 text-[15px] leading-relaxed text-ink-soft sm:grid-cols-2">
-                  {role.responsibilities.map((r) => (
-                    <li key={r}>{r}</li>
-                  ))}
-                </ul>
-              </li>
+              </Reveal>
             ))}
-          </ol>
+          </div>
         </div>
+      </section>
+
+      {/* CAREER & PROJECT JOURNEY */}
+      <section id="journey" className={`${container} ${section}`}>
+        <SectionHeading eyebrow="Career & Project Journey" title="How the work has built on itself." />
+        <ol className="mt-12 relative border-l border-border pl-8">
+          {journey.map((m) => (
+            <li key={m.title} className="relative pb-10 last:pb-0">
+              <span
+                aria-hidden
+                className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-bg bg-primary"
+              />
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="font-display text-[22px] leading-tight text-ink">{m.title}</h3>
+                <span className="eyebrow">{m.phase}</span>
+              </div>
+              <p className="mt-2 max-w-[60ch] text-[15px] leading-relaxed text-ink-soft">{m.body}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className={`${container} ${section}`}>
-        <SectionHeading eyebrow="Testimonials" title="What collaborators say." />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.author} delayMs={i * 80}>
-              <figure className="flex h-full flex-col rounded-xl border border-border bg-surface p-8">
-                <blockquote className="text-[19px] leading-relaxed text-ink">
-                  "{t.quote}"
-                </blockquote>
-                <div className="mt-6 border-t border-border pt-4">
-                  <div className="eyebrow">{t.author}</div>
-                  <div className="mt-1 text-[13px] text-ink-faint">{t.role}</div>
-                </div>
-              </figure>
-            </Reveal>
-          ))}
+      <section className={`bg-bg-alt ${section}`}>
+        <div className={container}>
+          <SectionHeading eyebrow="Testimonials" title="What collaborators say." />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <Reveal key={i} delayMs={i * 80}>
+                <figure className="flex h-full flex-col rounded-xl border border-border bg-surface p-8">
+                  <blockquote className="text-[19px] leading-relaxed text-ink">
+                    "{t.quote}"
+                  </blockquote>
+                  <div className="mt-6 border-t border-border pt-4">
+                    <div className="eyebrow">{t.author}</div>
+                    <div className="mt-1 text-[13px] text-ink-faint">{t.role}</div>
+                  </div>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* TOOLKIT */}
-      <section className={`bg-bg-alt ${section}`}>
-        <div className={container}>
-          <SectionHeading eyebrow="Technical Toolkit" title="Tools I reach for." />
-          <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {toolkit.map((group) => (
-              <div key={group.category}>
-                <dt className="eyebrow mb-4">{group.category}</dt>
-                <dd>
-                  <ul className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <Pill as="li" key={item}>{item}</Pill>
-                    ))}
-                  </ul>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+      <section className={`${container} ${section}`}>
+        <SectionHeading eyebrow="Technical Toolkit" title="Tools I reach for." />
+        <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {toolkit.map((group) => (
+            <div key={group.category}>
+              <dt className="eyebrow mb-4">{group.category}</dt>
+              <dd>
+                <ul className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <Pill as="li" key={item}>{item}</Pill>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* ABOUT */}
-      <section className={`${container} ${section}`}>
-        <div className="mx-auto max-w-[720px]">
-          <SectionHeading eyebrow="About" title="A little context." />
-          <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-ink-soft">
-            {about.map((p) => (
-              <p key={p.slice(0, 24)}>{p}</p>
-            ))}
+      <section className={`bg-bg-alt ${section}`}>
+        <div className={container}>
+          <div className="mx-auto max-w-[720px]">
+            <SectionHeading eyebrow="About" title="A little context." />
+            <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-ink-soft">
+              {about.map((p) => (
+                <p key={p.slice(0, 24)}>{p}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
