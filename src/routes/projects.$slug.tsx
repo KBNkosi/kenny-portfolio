@@ -131,7 +131,7 @@ function CaseStudyPage() {
             </ul>
           </div>
           <div>
-            <Eyebrow withTick>Challenges</Eyebrow>
+            <Eyebrow withTick>Challenges & Decisions</Eyebrow>
             <h2 className="mt-4 font-display text-[28px] leading-tight sm:text-[32px]">What was hard.</h2>
             <ul className="mt-6 space-y-3">
               {study.challenges.map((c: string) => (
