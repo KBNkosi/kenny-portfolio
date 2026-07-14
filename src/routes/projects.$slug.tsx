@@ -156,7 +156,7 @@ function CaseStudyPage() {
               </p>
             </div>
             <div className="mt-10">
-              <div className="eyebrow mb-4">Lessons Learned</div>
+              <div className="eyebrow mb-4">Key Takeaways</div>
               <ul className="flex flex-wrap gap-2">
                 {study.lessons.map((l: string) => (
                   <Pill as="li" key={l}>{l}</Pill>
