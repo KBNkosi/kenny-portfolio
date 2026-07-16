@@ -27,11 +27,11 @@ export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
     title: "AI-Assisted Appointment Booking Platform",
     status: "In Development",
     role: "Backend Developer & System Designer",
-    timeline: "2–4 months",
+    timeline: "In-progress",
     teamSize: "Solo",
     targetUsers: "Healthcare clinics and appointment-based businesses",
     overview:
-      "An AI-assisted booking platform that automates appointment scheduling through conversational interactions, handling patient resolution, availability calculation, conflict detection, and appointment creation.",
+      "An appointment booking platform designed to automate scheduling workflows through conversational interactions, patient resolution, availability calculation, conflict detection, and appointment creation.",
     problem:
       "Many clinics rely on manual scheduling processes that require staff to answer calls, verify patient information, check availability, and create appointments by hand.",
     solution:
@@ -51,7 +51,7 @@ export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
       "Separating booking intent from confirmed appointments to support reliable retry handling.",
     ],
     outcome:
-      "Demonstrates workflow automation, scheduling systems, and scalable appointment management.",
+      "Demonstrates workflow automation, scheduling logic, availability computation, and backend system design.",
     lessons: [
       "Critical business rules should be enforced at the database level, not only in application code.",
       "Workflow design often becomes more complex than API implementation.",
@@ -65,16 +65,16 @@ export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
     flowline: {
       problem: "Manual clinic scheduling loses time",
       solution: "AI-assisted, conflict-aware booking",
-      outcome: "Scalable appointment workflow",
+      outcome: "automated appointment workflow",
     },
-    github: null,
+    github: "https://github.com/KBNkosi/ai-booking-system.git",
     liveDemo: null,
   },
   "neighbour-trust": {
     slug: "neighbour-trust",
     eyebrow: "Case Study · Community Marketplace / Service Discovery",
     title: "NeighborTrust",
-    status: "Frontend Prototype / Concept Validation",
+    status: "Prototype",
     role: "Product Designer & Frontend Developer",
     timeline: "4–6 weeks",
     teamSize: "Solo",
@@ -84,7 +84,7 @@ export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
     problem:
       "People struggle to identify reliable service providers due to fragmented recommendations, anonymous reviews, and limited trust signals.",
     solution:
-      "A trust-first discovery experience combining community recommendations, structured provider profiles, ratings, and AI-assisted provider search.",
+      "A service discovery platform combining community recommendations, provider profiles, ratings, and search functionality.",
     keyFeatures: [
       "Provider discovery",
       "Community recommendations",
@@ -99,7 +99,7 @@ export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
       "Structuring provider information to support search, recommendations, and AI-assisted discovery.",
     ],
     outcome:
-      "Validates a trust-first approach to local service discovery.",
+      "Explores approaches to improving local service discovery through recommendations and trust-based interactions.",
     lessons: [
       "Trust is a product design problem as much as a technical problem.",
       "Effective discovery experiences reduce decision-making friction.",
@@ -115,8 +115,8 @@ export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
       solution: "Community-driven trust and discovery",
       outcome: "Validated trust-first service discovery",
     },
-    github: null,
-    liveDemo: null,
+    github: "https://github.com/KBNkosi/NeighborTrust.git",
+    liveDemo: "https://community-service-marketplace.vercel.app/",
   },
   "marketplace-mvp": {
     slug: "marketplace-mvp",
@@ -126,7 +126,7 @@ export const caseStudies: Record<CaseStudy["slug"], CaseStudy> = {
     role: "Frontend Developer, QA & Product Collaboration",
     timeline: "2 months",
     teamSize: "Team of 4",
-    targetUsers: "Startup founder validating a marketplace concept",
+    targetUsers: "Startup founder and early stakeholders evaluating a marketplace concept",
     overview:
       "A functional marketplace prototype built in collaboration with a founder and a small team to support concept validation within a fixed two-month timeline.",
     problem:

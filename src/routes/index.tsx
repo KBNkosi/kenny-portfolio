@@ -231,7 +231,7 @@ function Home() {
               Let's build something <em className="italic text-primary">useful</em>.
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-ink-soft sm:text-[19px]">
-              I'm open to founder collaborations, freelance builds, and full-time roles where the work is grounded in a real problem.
+              I'm currently open to software development opportunities, freelance work,  project collaborations, and conversations about building practical software that solves real-world problems.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
               <a

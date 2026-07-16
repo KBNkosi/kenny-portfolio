@@ -13,12 +13,12 @@ export const hero = {
   eyebrow: "Software Developer",
   // one italic word rendered via <em> in JSX
   headlineParts: {
-    before: "I build software platforms that connect people, services, opportunities, and business ",
-    italic: "processes",
+    before: "Software Developer Building Business Applications, Workflow Systems & Customer-Facing ",
+    italic: "platforms",
     after: ".",
   },
   lede:
-    "From AI-assisted booking platforms to community-driven marketplaces and recommendation systems, I design and ship software that solves real operational problems — across workflow automation, service discovery, and community platforms.",
+    "My experience includes building service discovery platforms, recommendation systems, booking applications, community-driven products, and business-focused software through startup collaborations, academic projects, and independent development.",
   ctas: {
     primary: { label: "View Projects", href: "#projects" },
     secondary: { label: "Get In Touch", href: "#contact" },
@@ -27,24 +27,22 @@ export const hero = {
 
 export const credibility = {
   stats: [
-    { value: "6", label: "Projects shipped across product domains" },
-    { value: "3", label: "Featured platforms in depth" },
-    { value: "5+", label: "Product areas covered end-to-end" },
-    { value: "1–6", label: "Solo builds through team collaborations" },
+    { value: "6+", label: "Software Projects Built" },
+    { value: "1", label: "Startup MVP Delivered" },
+    { value: "Bsc", label: "Information Technology" },
+    { value: "Full-stack", label: "Experience Across the Development Stack" },
   ],
   highlights: [
     "Currently building an AI-assisted appointment booking platform with FastAPI, PostgreSQL, and workflow automation at its core.",
     "Shipped a founder-led marketplace MVP in a team of four, delivering a functional product for concept validation.",
-    "Designed NeighborTrust — a trust-first service discovery prototype for local providers.",
+    "Designed NeighborTrust; a trust-first service discovery prototype for local providers.",
     "Contributed data collection, recommendation logic, and personality assessment work on a six-person capstone recommendation platform.",
   ],
 };
 
 export const coreThemes = [
   "Workflow Automation",
-  "Recommendation Systems",
   "Service Discovery",
-  "Marketplace Platforms",
   "Community Platforms",
   "Decision Support Systems",
   "User-Centered Product Design",
@@ -73,17 +71,17 @@ export const featuredProjects: FeaturedProject[] = [
     status: "In Development",
     title: "AI-Assisted Appointment Booking Platform",
     summary:
-      "An AI-assisted platform that automates appointment scheduling for clinics and appointment-based businesses through conversational interactions, patient resolution, availability calculation, and conflict detection.",
+      "An AI-assisted appointment booking system designed to automate scheduling workflows through availability calculation, appointment conflict detection, patient resolution, and voice-assistant integration.",
     role: "Backend Developer & System Designer",
-    timeline: "2–4 months · Solo",
+    timeline: "in-progress·Solo",
     problem:
-      "Clinics rely on manual scheduling — staff answer calls, verify patients, check availability, and create appointments by hand.",
+      "Clinics rely on manual scheduling and human intervention to manage appointments.",
     solution:
-      "A backend that resolves patients, matches doctors, calculates availability dynamically, detects conflicts, and creates appointments idempotently.",
+      "A scheduling system that calculates availability dynamically, prevents appointment conflicts, and supports AI-assisted booking workflows.",
     outcome:
-      "Demonstrates workflow automation, scheduling systems, and scalable appointment management.",
+      "Demonstrates the design of scheduling workflows, business-rule enforcement, and appointment management systems.",
     focusAreas: ["Workflow Automation", "Scheduling Systems", "System Design"],
-    github: null,
+    github: "https://github.com/KBNkosi/ai-booking-system.git",
     liveDemo: null,
   },
   {
@@ -96,14 +94,14 @@ export const featuredProjects: FeaturedProject[] = [
     role: "Product Designer & Frontend Developer",
     timeline: "4–6 weeks · Solo",
     problem:
-      "People struggle to identify reliable service providers — recommendations are fragmented, reviews are anonymous, and trust signals are thin.",
+      "People struggle to identify reliable service providers in their local area.",
     solution:
-      "A trust-first discovery experience: community recommendations, structured provider profiles, ratings, and an AI-assisted search flow.",
+      "A service discovery experience centered around recommendations, provider profiles, and community trust signals.",
     outcome:
       "Validates a trust-first approach to local service discovery.",
     focusAreas: ["Service Discovery", "Community Trust", "Local Commerce"],
-    github: null,
-    liveDemo: null,
+    github: "https://github.com/KBNkosi/NeighborTrust.git",
+    liveDemo: "https://community-service-marketplace.vercel.app/",
   },
   {
     slug: "marketplace-mvp",
@@ -117,7 +115,7 @@ export const featuredProjects: FeaturedProject[] = [
     problem:
       "The founder needed a working marketplace prototype to support concept validation and early business conversations.",
     solution:
-      "Collaborated with the founder and dev team to ship core marketplace listings, user interactions, and prototype workflows on FlutterFlow + Supabase.",
+      "Collaborated with the founder and dev team to ship marketplace mvp.",
     outcome:
       "Delivered a functional MVP for startup validation.",
     focusAreas: ["Startup Delivery", "Product Validation", "Marketplace Systems"],
@@ -152,7 +150,7 @@ export const supportingProjects: SupportingProject[] = [
     solution:
       "Behavioural and personality assessments feeding into a recommendation engine over university and course datasets.",
     technologies: ["React", "Tailwind CSS", "Flask", "SQLite", "Scikit-learn"],
-    github: null,
+    github: "https://github.com/KBNkosi/career-recommendation-system.git",
     liveDemo: null,
   },
   {
@@ -167,7 +165,7 @@ export const supportingProjects: SupportingProject[] = [
     solution:
       "Catalog browsing, category filters, product detail pages, and cart management on a modern React stack.",
     technologies: ["React", "Vite", "Tailwind CSS", "React Router", "Axios"],
-    github: null,
+    github: "https://github.com/KBNkosi/e-commerce-storefront.git",
     liveDemo: null,
   },
   {
@@ -182,35 +180,35 @@ export const supportingProjects: SupportingProject[] = [
     solution:
       "Authentication, community reporting, media uploads, dashboards, and role-based moderation on a LAMP stack.",
     technologies: ["PHP", "MySQL", "Bootstrap", "Apache"],
-    github: null,
+    github: "https://github.com/KBNkosi/CrowdRail-Project.git",
     liveDemo: null,
   },
 ];
 
 export const principles = [
   {
-    title: "Start with the business problem.",
-    body: "Every project begins with the operational pain, not the tech stack. The tools are chosen last.",
+    title: "Start with the problem before the solution",
+    body: "I try to understand the user's challenge and the workflow behind it before deciding on technologies or implementation details.",
   },
   {
-    title: "Ship the smallest honest version.",
-    body: "A working slice beats a plan. I release early, learn, and iterate against real feedback.",
+    title: "Build Incrementally",
+    body: "I prefer breaking projects into smaller, working pieces that can be tested, improved, and expanded over time.",
   },
   {
-    title: "Design for the workflow.",
-    body: "Software lives inside people's day-to-day. Flow, states, and edge cases matter as much as features.",
+    title: "Think through workflows and edge cases",
+    body: "Beyond features, I pay attention to how users move through a system and how the application handles real-world scenarios.",
   },
   {
-    title: "Collaborate with founders directly.",
-    body: "I treat non-technical stakeholders as partners — translating intent into product decisions.",
+    title: "Work closely with stakeholders and teammates",
+    body: "Whether collaborating with founders, project teammates, or end users, I value clear communication and shared understanding.",
   },
   {
-    title: "Own the whole stack when needed.",
-    body: "From data model to interface, I move where the problem is. Comfortable across the full boundary.",
+    title: "Stay adaptable across the stack",
+    body: "My projects have involved frontend interfaces, backend APIs, databases, and integrations, allowing me to contribute wherever needed and learn new technologies quickly.",
   },
   {
-    title: "Prefer clarity over cleverness.",
-    body: "Boring, predictable code that another developer can read and extend outlasts a clever one-liner.",
+    title: "Prioritize clarity and maintainability",
+    body: "I aim to write code that is understandable, maintainable, and easy for others to work with.",
   },
 ];
 
@@ -233,13 +231,18 @@ export const journey: JourneyMilestone[] = [
   },
   {
     phase: "Support",
-    title: "Technical Support — ALX",
+    title: "Technical Support-ALX",
     body: "Real-world troubleshooting, user support, and communication under operational pressure.",
   },
   {
-    phase: "Independent Building",
-    title: "CrowdRail & E-Commerce Storefront",
-    body: "Shipped full-stack and frontend projects end-to-end as a solo developer.",
+    phase: "community",
+    title: "CrowdRail",
+    body: "Built a community-driven platform centered around content sharing and user participation.",
+  },
+  {
+    phase: "commerce",
+    title: "E-Commerce Storefront",
+    body: "Developed a customer-facing shopping experience with product discovery, search, and cart functionality..",
   },
   {
     phase: "Startup Delivery",
@@ -249,7 +252,7 @@ export const journey: JourneyMilestone[] = [
   {
     phase: "Service Discovery",
     title: "NeighborTrust",
-    body: "Designed and prototyped a trust-first local service discovery platform.",
+    body: "Designed a service discovery platform helping users find and evaluate local service providers.",
   },
   {
     phase: "Currently Building",
@@ -261,52 +264,48 @@ export const journey: JourneyMilestone[] = [
 export const testimonials = [
   {
     quote:
-      "Kenny took a rough concept and turned it into a working product I could actually put in front of people. He asks the right questions and moves quickly.",
-    author: "[Testimonial Name]",
-    role: "[Role / Company]",
+      "Kenny played an important role in helping our team turn a marketplace concept into a functional MVP within a tight timeline. He was reliable, adaptable, and consistently focused on delivering a product that aligned with our business goals.",
+    author: "Abbas",
+    role: "Founder, Nomad54 Startup",
   },
   {
     quote:
-      "Rare combination of technical depth and product judgement. He treats the business problem as seriously as the code.",
-    author: "[Testimonial Name]",
-    role: "[Role / Company]",
+      "Kenny consistently demonstrates curiosity, persistence, and a strong willingness to learn. He approaches challenges thoughtfully, takes initiative, and continues to grow through hands-on problem solving and real project experience",
+    author: "Kaedyn",
+    role: "Senior Mentor, MentryX",
   },
   {
     quote:
-      "Reliable, communicative, and thoughtful. Kenny doesn't just build what you ask for — he builds what you actually need.",
-    author: "[Testimonial Name]",
-    role: "[Role / Company]",
+      "Kenny was dependable, collaborative, and committed to the success of the project. He communicated well, contributed consistently, and was someone the team could rely on throughout development.",
+    author: "Emdinga",
+    role: "Backend developer/Teammate, Nomad54 Startup",
   },
 ];
 
 export const toolkit = [
   {
     category: "Frontend",
-    items: ["React", "Vite", "Tailwind CSS", "React Router", "Axios", "Bootstrap"],
+    items: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
   },
   {
     category: "Backend",
-    items: ["Python", "FastAPI", "Flask", "PHP"],
+    items: ["Python", "FastAPI", "REST APIs", "SQLAlchemy"],
   },
   {
     category: "Data",
-    items: ["PostgreSQL", "SQLAlchemy", "Alembic", "SQLite", "MySQL"],
+    items: ["PostgreSQL", "SQLite", "MySQL"],
   },
-  {
-    category: "AI, Recommendations & Voice",
-    items: ["Scikit-learn", "Vapi"],
-  },
+  
   {
     category: "Rapid Delivery",
-    items: ["FlutterFlow", "Supabase", "Apache"],
+    items: ["FlutterFlow", "Supabase"],
   },
 ];
 
 export const about = [
-  "I'm a software developer based in Gauteng, South Africa, working across workflow automation, recommendation systems, marketplaces, community platforms, and service discovery.",
-  "Most of my work centres on business platforms that connect people, services, and processes — from AI-assisted scheduling backends to trust-first local marketplaces.",
-  "I've shipped as a solo developer, contributed to six-person academic teams, and collaborated with a founder on a startup MVP under a fixed timeline.",
-  "I'm most useful in the ambiguous, early stages — where a problem needs to be understood before it can be built.",
+  "I am a Software Developer focused on building business applications, workflow systems, and customer-facing software.",
+  "My experience includes startup product development, academic team projects, and independently developed applications. Across these projects, I have worked on recommendation systems, service discovery platforms, booking applications, community-driven products, and business workflows.",
+  "I enjoy translating ideas into practical software solutions and am particularly interested in backend systems, workflow automation, service discovery, and applications that help users make decisions, discover opportunities, and complete tasks more effectively.",
 ];
 
 export const nav = [
