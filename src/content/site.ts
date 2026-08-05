@@ -303,9 +303,9 @@ export const toolkit = [
 ];
 
 export const about = [
-  "I am a Software Developer who builds practical applications for workflows, discovery, and user-facing tools.",
-  "My work so far includes independent projects, academic team work, and a short startup collaboration. Across those experiences, I have worked on recommendation systems, service discovery tools, booking workflows, community-focused products, and user-facing software.",
-  "I enjoy translating ideas into practical software solutions and am particularly interested in backend systems, workflow automation, service discovery, and applications that help users make decisions, discover opportunities, and complete tasks more effectively.",
+  "I am a Software Developer who enjoys building practical software around real-world problems. I like understanding how people complete tasks, where friction exists in a process, and how software can make those experiences simpler, more efficient, or easier to use.",
+  "My experience includes independent projects, academic teamwork, and a short startup collaboration. Through these experiences, I have explored problems such as appointment booking, career guidance, service discovery, and community-focused platforms while strengthening my skills in software development.",
+  "I'm particularly interested in backend development and building applications that model real-world workflows, support better decision-making, and solve practical problems. As an early-career developer, I enjoy learning by building projects that challenge both my technical skills and my understanding of the problem I'm trying to solve.",
 ];
 
 export const nav = [
