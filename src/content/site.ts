@@ -255,7 +255,7 @@ export const journey: JourneyMilestone[] = [
     body: "Designed a service discovery platform helping users find and evaluate local service providers.",
   },
   {
-    phase: "Currently Building",
+    phase: "Workflow Automation",
     title: "AI-Assisted Appointment Booking Platform",
     body: "Backend and system design for a workflow automation platform on Python, FastAPI, and PostgreSQL.",
   },
