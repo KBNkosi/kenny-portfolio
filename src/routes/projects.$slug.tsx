@@ -115,6 +115,31 @@ function CaseStudyPage() {
         </div>
       </section>
 
+      {study.videoEmbedUrl ? (
+        <section className={`${container} py-20 sm:py-24`}>
+          <div className={`${prose}`}>
+            <Eyebrow withTick>Demo</Eyebrow>
+            <h2 className="mt-4 font-display text-[28px] leading-tight sm:text-[32px]">AI-assisted booking platform walkthrough</h2>
+            <p className="mt-4 text-[17px] leading-relaxed text-ink-soft sm:text-[18px]">
+              A short demo showing the conversational booking flow, appointment matching, and availability handling.
+            </p>
+            <div className="mt-8 overflow-hidden rounded-[2rem] border border-border bg-black shadow-sm">
+              <div className="aspect-video">
+                <iframe
+                  className="h-full w-full"
+                  src={study.videoEmbedUrl}
+                  title={`Demo video for ${study.title}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* KEY FEATURES · CHALLENGES */}
       <section className={`${container} py-20 sm:py-24`}>
         <div className="grid gap-12 lg:grid-cols-2">

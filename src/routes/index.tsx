@@ -242,7 +242,9 @@ function Home() {
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
               <a
-                href={`mailto:${site.email}`}
+                href={`https://mail.google.com/mail/?view=cm&to=${site.email}`}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3.5 text-[15px] font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark"
               >
                 {site.email}

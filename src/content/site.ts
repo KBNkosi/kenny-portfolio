@@ -2,7 +2,7 @@ export const site = {
   name: "Kenny Nkosi",
   title: "Software Developer",
   headline:
-    "Software Developer Building Business Platforms, Digital Marketplaces & Workflow Solutions",
+    "Software Developer building practical software to solve real-world problems",
   location: "Gauteng, South Africa",
   email: "nkosikenny9@gmail.com",
   github: "https://github.com/KBNkosi",
@@ -13,12 +13,12 @@ export const hero = {
   eyebrow: "Software Developer",
   // one italic word rendered via <em> in JSX
   headlineParts: {
-    before: "Software Developer Building Business Applications, Workflow Systems & Customer-Facing ",
-    italic: "platforms",
+    before: "Software Developer building practical software to solve real-world ",
+    italic: "problems",
     after: ".",
   },
   lede:
-    "My experience includes building service discovery platforms, recommendation systems, booking applications, community-driven products, and business-focused software through startup collaborations, academic projects, and independent development.",
+    "I build software to explore real problems, learn through hands-on development, and turn ideas into practical prototypes through independent work, academic projects, and a startup collaboration.",
   ctas: {
     primary: { label: "View Projects", href: "#projects" },
     secondary: { label: "Get In Touch", href: "#contact" },
@@ -27,14 +27,14 @@ export const hero = {
 
 export const credibility = {
   stats: [
-    { value: "6+", label: "Software Projects Built" },
-    { value: "1", label: "Startup MVP Delivered" },
+    { value: "6+", label: "Projects built" },
+    { value: "1", label: "Startup prototype completed" },
     { value: "Bsc", label: "Information Technology" },
-    { value: "Full-stack", label: "Experience Across the Development Stack" },
+    { value: "Full-stack", label: "Exposure to frontend, backend, and data" },
   ],
   highlights: [
     "Currently building an AI-assisted appointment booking platform with FastAPI, PostgreSQL, and workflow automation at its core.",
-    "Shipped a founder-led marketplace MVP in a team of four, delivering a functional product for concept validation.",
+    "Built a founder-led marketplace prototype in a team of four for concept validation.",
     "Designed NeighborTrust; a trust-first service discovery prototype for local providers.",
     "Contributed data collection, recommendation logic, and personality assessment work on a six-person capstone recommendation platform.",
   ],
@@ -68,21 +68,40 @@ export const featuredProjects: FeaturedProject[] = [
   {
     slug: "ai-booking-platform",
     type: "Workflow Automation Platform",
-    status: "In Development",
+    status: "Completed",
     title: "AI-Assisted Appointment Booking Platform",
     summary:
-      "An AI-assisted appointment booking system designed to automate scheduling workflows through availability calculation, appointment conflict detection, patient resolution, and voice-assistant integration.",
-    role: "Backend Developer & System Designer",
-    timeline: "in-progress·Solo",
+      "A prototype appointment booking system exploring scheduling workflows through availability calculation, conflict detection, patient resolution, and voice-assisted interactions.",
+    role: "Backend Developer",
+    timeline: "4-6 weeks · Solo",
     problem:
       "Clinics rely on manual scheduling and human intervention to manage appointments.",
     solution:
-      "A scheduling system that calculates availability dynamically, prevents appointment conflicts, and supports AI-assisted booking workflows.",
+      "A prototype scheduling system that calculates availability dynamically, prevents appointment conflicts, and supports AI-assisted booking workflows.",
     outcome:
-      "Demonstrates the design of scheduling workflows, business-rule enforcement, and appointment management systems.",
-    focusAreas: ["Workflow Automation", "Scheduling Systems", "System Design"],
+      "Explores workflow automation, business-rule handling, and appointment management logic.",
+    focusAreas: ["Workflow Automation", "Scheduling Systems", "Conversational AI"],
     github: "https://github.com/KBNkosi/ai-booking-system.git",
-    liveDemo: null,
+    liveDemo: "https://youtu.be/SKPvAFXAOqU?si=LgD9vdoc6AJpwIzE",
+  },
+  {
+    slug: "career-guidance-platform",
+    type: "Recommendation & Decision Support",
+    status: "Completed Capstone",
+    title: "Career Guidance Platform",
+    summary:
+      "A recommendation platform built to guide students from their interests and personality traits toward suitable career and education pathways.",
+    role: "Data & Recommendation Systems Contributor · Team of 6",
+    timeline: "Academic capstone",
+    problem:
+      "Students struggle to connect their interests and personality traits to suitable careers and educational pathways.",
+    solution:
+      "Built a platform that combines behavioural assessments, educational datasets, and recommendation logic to suggest career and university options.",
+    outcome:
+      "Explores recommendation-system design, data modelling, and decision-support workflows.",
+    focusAreas: ["Recommendation Systems", "Decision Support", "Educational Data"],
+    github: "https://github.com/KBNkosi/career-recommendation-system.git",
+    liveDemo: "https://career-match-system.netlify.app/",
   },
   {
     slug: "neighbour-trust",
@@ -90,7 +109,7 @@ export const featuredProjects: FeaturedProject[] = [
     status: "Frontend Prototype",
     title: "NeighborTrust",
     summary:
-      "A recommendation-driven platform that helps residents discover trusted local service providers through community referrals, provider profiles, and AI-assisted search.",
+      "A prototype recommendation system that helps residents discover trusted local service providers through referrals, provider profiles, and AI-assisted search.",
     role: "Product Designer & Frontend Developer",
     timeline: "4–6 weeks · Solo",
     problem:
@@ -102,25 +121,6 @@ export const featuredProjects: FeaturedProject[] = [
     focusAreas: ["Service Discovery", "Community Trust", "Local Commerce"],
     github: "https://github.com/KBNkosi/NeighborTrust.git",
     liveDemo: "https://community-service-marketplace.vercel.app/",
-  },
-  {
-    slug: "marketplace-mvp",
-    type: "Startup MVP",
-    status: "Delivered Prototype",
-    title: "Founder-Led Marketplace MVP",
-    summary:
-      "A functional marketplace prototype built with a founder and a small team to support concept validation within a fixed two-month timeline.",
-    role: "Frontend Developer, QA & Product Collaboration",
-    timeline: "2 months · Team of 4",
-    problem:
-      "The founder needed a working marketplace prototype to support concept validation and early business conversations.",
-    solution:
-      "Collaborated with the founder and dev team to ship marketplace mvp.",
-    outcome:
-      "Delivered a functional MVP for startup validation.",
-    focusAreas: ["Startup Delivery", "Product Validation", "Marketplace Systems"],
-    github: null,
-    liveDemo: null,
   },
 ];
 
@@ -138,21 +138,6 @@ export type SupportingProject = {
 };
 
 export const supportingProjects: SupportingProject[] = [
-  {
-    title: "Career Guidance Platform",
-    type: "Recommendation & Decision Support",
-    status: "Completed Capstone",
-    role: "Data & Recommendation Systems Contributor · Team of 6",
-    summary:
-      "A recommendation platform combining assessments, educational datasets, and recommendation logic to guide students toward suitable careers.",
-    problem:
-      "Students struggle to connect their interests and personality traits to suitable careers and educational pathways.",
-    solution:
-      "Behavioural and personality assessments feeding into a recommendation engine over university and course datasets.",
-    technologies: ["React", "Tailwind CSS", "Flask", "SQLite", "Scikit-learn"],
-    github: "https://github.com/KBNkosi/career-recommendation-system.git",
-    liveDemo: null,
-  },
   {
     title: "E-Commerce Storefront",
     type: "Product Discovery & Shopping",
@@ -174,13 +159,28 @@ export const supportingProjects: SupportingProject[] = [
     status: "Completed Academic Project",
     role: "Full-Stack Developer · Solo",
     summary:
-      "A centralised platform where rail enthusiasts submit train sightings, upload media, and take part in moderated community discussions.",
+      "A prototype platform where rail enthusiasts submit train sightings, upload media, and take part in moderated community discussions.",
     problem:
       "Train sightings and rail observations are scattered across fragmented channels, making discovery and discussion difficult.",
     solution:
       "Authentication, community reporting, media uploads, dashboards, and role-based moderation on a LAMP stack.",
     technologies: ["PHP", "MySQL", "Bootstrap", "Apache"],
     github: "https://github.com/KBNkosi/CrowdRail-Project.git",
+    liveDemo: null,
+  },
+  {
+    title: "Founder-Led Marketplace Prototype",
+    type: "Startup Prototype",
+    status: "Completed Prototype",
+    role: "Frontend Developer & QA Collaborator",
+    summary:
+      "A marketplace prototype built with a founder and a small team to support concept validation within a fixed two-month timeline.",
+    problem:
+      "The founder needed a working prototype to support concept validation and early stakeholder feedback.",
+    solution:
+      "Built marketplace listings, user interactions, and validation-focused flows using FlutterFlow and Supabase.",
+    technologies: ["FlutterFlow", "Supabase"],
+    github: null,
     liveDemo: null,
   },
 ];
@@ -242,11 +242,11 @@ export const journey: JourneyMilestone[] = [
   {
     phase: "commerce",
     title: "E-Commerce Storefront",
-    body: "Developed a customer-facing shopping experience with product discovery, search, and cart functionality..",
+    body: "Developed a user-facing shopping experience with product discovery, search, and cart functionality.",
   },
   {
-    phase: "Startup Delivery",
-    title: "Founder-Led Marketplace MVP",
+    phase: "Startup Prototype",
+    title: "Founder-Led Marketplace Prototype",
     body: "Delivered a marketplace prototype in a team of four within a fixed two-month timeline.",
   },
   {
@@ -303,8 +303,8 @@ export const toolkit = [
 ];
 
 export const about = [
-  "I am a Software Developer focused on building business applications, workflow systems, and customer-facing software.",
-  "My experience includes startup product development, academic team projects, and independently developed applications. Across these projects, I have worked on recommendation systems, service discovery platforms, booking applications, community-driven products, and business workflows.",
+  "I am a Software Developer who builds practical applications for workflows, discovery, and user-facing tools.",
+  "My work so far includes independent projects, academic team work, and a short startup collaboration. Across those experiences, I have worked on recommendation systems, service discovery tools, booking workflows, community-focused products, and user-facing software.",
   "I enjoy translating ideas into practical software solutions and am particularly interested in backend systems, workflow automation, service discovery, and applications that help users make decisions, discover opportunities, and complete tasks more effectively.",
 ];
 
