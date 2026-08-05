@@ -20,6 +20,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { StatStrip } from "@/components/site/StatStrip";
 import { SupportingProjectCard } from "@/components/site/SupportingProjectCard";
+import graduatePhoto from "@/assets/graduate-photo.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -32,8 +33,8 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className={`${container} flex min-h-[calc(100vh-4rem)] flex-col justify-center py-16 sm:py-20`}>
-        <div className="max-w-[900px]">
+      <section className={`${container} flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center gap-10 py-16 sm:py-20 lg:flex-row lg:items-start lg:gap-16`}>
+        <div className="w-full max-w-[700px] lg:max-w-[600px]">
           <Eyebrow withTick>{hero.eyebrow}</Eyebrow>
           <h1 className="mt-6 font-display text-[38px] font-medium leading-[1.05] tracking-tight text-ink sm:text-[52px] lg:text-[64px]">
             {hero.headlineParts.before}
@@ -57,8 +58,14 @@ function Home() {
               {hero.ctas.secondary.label}
             </a>
           </div>
-          <div className="mt-16 max-w-[420px]">
-            <FlowLine variant="hero" animate />
+        </div>
+        <div className="w-full max-w-[420px] shrink-0 lg:mt-4">
+          <div className="aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-border bg-surface shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
+            <img
+              src={graduatePhoto}
+              alt="Graduate photo"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
       </section>
