@@ -33,10 +33,10 @@ export const credibility = {
     { value: "Full-stack", label: "Exposure to frontend, backend, and data" },
   ],
   highlights: [
-    "Built an AI-assisted appointment booking platform with Vapi, FastAPI, PostgreSQL, and workflow automation at its core.",
-    "Built a founder-led marketplace prototype in a team of four for concept validation.",
-    "Designed NeighborTrust; a trust-first service discovery prototype for local providers.",
-    "Contributed data collection, recommendation logic, and personality assessment work on a six-person capstone recommendation platform.",
+    "Delivered an AI-assisted appointment booking platform powered by Vapi, FastAPI, PostgreSQL, and workflow automation.",
+    "Delivered a founder-led marketplace prototype with a four-person team to validate the concept.",
+    "Designed NeighborTrust, a trust-first service discovery prototype for local providers.",
+    "Contributed data collection, recommendation logic, and personality assessment work to a six-person career guidance capstone.",
   ],
 };
 
