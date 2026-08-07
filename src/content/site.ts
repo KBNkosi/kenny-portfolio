@@ -42,10 +42,9 @@ export const credibility = {
 
 export const coreThemes = [
   "Workflow Automation",
-  "Service Discovery",
-  "Community Platforms",
-  "Decision Support Systems",
-  "User-Centered Product Design",
+  "Business-Oriented Software",
+  "Practical Problem Solving",
+  "Decision Support Applications",
 ];
 
 export type FeaturedProject = {

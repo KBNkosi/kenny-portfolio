@@ -91,7 +91,7 @@ function Home() {
       {/* CORE THEMES */}
       <section className={`${container} py-16 sm:py-20`}>
         <div className="flex flex-col items-center gap-6 text-center">
-          <Eyebrow withTick>Core Themes</Eyebrow>
+          <Eyebrow withTick>What Interests Me</Eyebrow>
           <ul className="flex flex-wrap justify-center gap-2">
             {coreThemes.map((theme) => (
               <Pill as="li" key={theme}>{theme}</Pill>
@@ -198,7 +198,7 @@ function Home() {
 
       {/* TOOLKIT */}
       <section className={`${container} ${section}`}>
-        <SectionHeading eyebrow="Technical Toolkit" title="Tools I reach for." />
+        <SectionHeading eyebrow="Technical Toolkit" title="Tech Stack" />
         <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {toolkit.map((group) => (
             <div key={group.category}>
