@@ -73,7 +73,7 @@ function Home() {
       {/* CREDIBILITY */}
       <section className={`bg-bg-alt ${section}`}>
         <div className={container}>
-          <SectionHeading eyebrow="Credibility Snapshot" title="Evidence over adjectives." />
+          <SectionHeading eyebrow="Professional Snapshot" title="Evidence over adjectives." />
           <div className="mt-10">
             <StatStrip />
           </div>
