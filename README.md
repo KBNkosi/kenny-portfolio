@@ -1,100 +1,40 @@
-# Portfolio Website 🚀
+# Kenny Nkosi — Implementation Portfolio
 
-Personal portfolio website showcasing software development projects, case studies, technical experience, and current work.
+**[Open the public portfolio](https://kbnkosi.github.io/kenny-portfolio/)**
 
-The portfolio highlights projects in workflow automation, service discovery, recommendation systems, marketplaces, and customer-facing applications.
+The main portfolio for Kenny Nkosi’s paid software implementation services. It presents web application development, business-tool connections, appointment-booking workflows and feature troubleshooting, backed by accurately scoped project evidence.
 
-## Live Portfolio 🌐
+## Website files
 
-**View the live portfolio:** [Kenny Nkosi Portfolio](https://kbnkosi.github.io/kenny-portfolio/)
+The active website lives at the repository root. GitHub Pages publishes the `main` branch from `/(root)`.
 
-The approved client portfolio is published by GitHub Pages from the `docs/` folder on `main`. It contains the service explorer, project evidence and enquiry brief. Edit the files in `docs/` to update the public site; no build step is needed. The earlier React application remains in `src/`.
+| File | Purpose |
+| --- | --- |
+| `index.html` | Page content and structure |
+| `styles.css` | Shared layout and visual design |
+| `services.css` | Service overview and responsive explorer |
+| `app.js` | Service selection, project dialogs and enquiry brief |
+| `favicon.svg` | Site icon |
+| `.nojekyll` | Serves the static files directly on GitHub Pages |
 
-See [public portfolio maintenance](docs/README.md) for details.
+No dependency installation or build step is required.
 
-The website includes:
+## Preview and update
 
-- Featured project case studies
-- Career and project journey
-- Technical skills and technologies
-- Project showcases and supporting work
-- Contact information
+From the repository root:
 
-## Purpose
-
-This portfolio was built to present software development work in a structured and professional format.
-
-Rather than focusing on technologies alone, the site highlights the problems, decisions, and workflows behind each project.
-
-## Featured Projects
-
-### AI-Assisted Appointment Booking Platform
-Workflow automation system focused on appointment scheduling, availability calculation, and appointment conflict prevention.
-
-### NeighborTrust
-Service discovery platform helping users discover trusted local providers through recommendations and structured profiles.
-
-### Founder-Led Marketplace MVP
-Marketplace prototype delivered in collaboration with a startup founder and development team.
-
-## Technology Stack
-
-### Frontend
-- React
-- TypeScript
-- Tailwind CSS
-- Vite
-- TanStack React Router
-
-### Deployment
-- Cloudflare Workers / Nitro
-
-### Tooling
-- ESLint
-- Prettier
-- Git
-
-## Project Structure
-
-src/
-├── components/
-├── content/
-├── lib/
-├── routes/
-└── styles.css
-
-## Local Development
-
-Clone the repository:
-
-```bash
-git clone <repo-url>
+```sh
+python -m http.server 8000
 ```
 
-Install dependencies:
+Open `http://localhost:8000`. If JavaScript changes, run `node --check app.js`.
 
-```bash
-npm install
-```
+Edit the root website files, review the result, and commit to `main`. GitHub Pages automatically deploys updates. The public URL stays the same.
 
-Run locally:
+## Enquiries
 
-```bash
-npm run dev
-```
+The brief builder opens an email draft or copies the text. It does not send email automatically or store submissions on a server.
 
-Build for production:
+## Previous implementation
 
-```bash
-npm run build
-```
-
-## Planned Improvements
-
-- Project demo videos
-- Architecture diagrams
-- Additional project documentation
-- Expanded project case studies
-- Improved mobile experience
-
-
+The complete state before the root migration is preserved on the `archive/previous-portfolio` branch, including the earlier React application. The main branch contains the current portfolio only. Existing commit history is preserved.
