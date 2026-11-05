@@ -6,7 +6,11 @@ The portfolio highlights projects in workflow automation, service discovery, rec
 
 ## Live Portfolio 🌐
 
-**View the live portfolio:** [Kenny Nkosi Portfolio](https://kbnkosi-business-platform-builder.kbnkosi.workers.dev/)
+**View the live portfolio:** [Kenny Nkosi Portfolio](https://kbnkosi.github.io/kenny-portfolio/)
+
+The approved client portfolio is published by GitHub Pages from the `docs/` folder on `main`. It contains the service explorer, project evidence and enquiry brief. Edit the files in `docs/` to update the public site; no build step is needed. The earlier React application remains in `src/`.
+
+See [public portfolio maintenance](docs/README.md) for details.
 
 The website includes:
 
