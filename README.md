@@ -1,4 +1,4 @@
-# Kenny Nkosi — Implementation Portfolio
+# Kenny Nkosi-Portfolio
 
 **[Open the public portfolio](https://kbnkosi.github.io/kenny-portfolio/)**
 
@@ -34,7 +34,3 @@ Edit the root website files, review the result, and commit to `main`. GitHub Pag
 ## Enquiries
 
 The brief builder opens an email draft or copies the text. It does not send email automatically or store submissions on a server.
-
-## Previous implementation
-
-The complete state before the root migration is preserved on the `archive/previous-portfolio` branch, including the earlier React application. The main branch contains the current portfolio only. Existing commit history is preserved.
